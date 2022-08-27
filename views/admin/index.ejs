@@ -1,0 +1,83 @@
+<% layout('layouts/adminBoilerplate') %>
+
+<h1>Candidates</h1>
+<a class="btn btn-primary" href="/admin/new">Add Candidate</a>
+<a class="btn btn-warning" href="/">Quit Admin</a>
+<hr />
+<h3>Presidents</h3>
+<div class="d-flex flex-row flex-wrap">
+  <% for (candidate of candidates){ %> <% if (candidate.position ===
+  'president'){ %>
+  <div class="card col-md-3 p-1">
+    <img
+      src="<%= candidate.image %>"
+      class="card-img-top"
+      style="object-fit: cover; height: 300px"
+    />
+    <div class="card-body">
+      <h5 class="card-title"><%= candidate.name %></h5>
+      <p>votes: <%= candidate.votes %></p>
+      <a href="/admin/<%= candidate._id %>" class="btn btn-success">edit</a>
+      <form
+        action="/admin/<%= candidate._id %>?_method=DELETE"
+        class="d-inline"
+        method="post"
+      >
+        <button class="btn btn-danger">delete</button>
+      </form>
+    </div>
+  </div>
+  <% } %> <% } %>
+</div>
+<hr />
+<h3 class="mt-5">Vice-Presidents</h3>
+<div class="d-flex flex-row flex-wrap">
+  <% for (candidate of candidates){ %> <% if (candidate.position ===
+  'vice-president'){ %>
+  <div class="card col-md-3 p-1">
+    <img
+      src="<%= candidate.image %>"
+      class="card-img-top"
+      style="object-fit: cover; height: 300px"
+    />
+    <div class="card-body">
+      <h5 class="card-title"><%= candidate.name %></h5>
+      <p>votes: <%= candidate.votes %></p>
+      <a href="/admin/<%= candidate._id %>" class="btn btn-success">edit</a>
+      <form
+        action="/admin/<%= candidate._id %>?_method=DELETE"
+        class="d-inline"
+        method="post"
+      >
+        <button class="btn btn-danger">delete</button>
+      </form>
+    </div>
+  </div>
+  <% } %> <% } %>
+</div>
+<hr />
+<h3 class="mt-5">Senators</h3>
+<div class="d-flex flex-row flex-wrap">
+  <% for (candidate of candidates){ %> <% if (candidate.position === 'senator'){
+  %>
+  <div class="card col-md-3 p-1">
+    <img
+      src="<%= candidate.image %>"
+      class="card-img-top"
+      style="object-fit: cover; height: 300px"
+    />
+    <div class="card-body">
+      <h5 class="card-title"><%= candidate.name %></h5>
+      <p>votes: <%= candidate.votes %></p>
+      <a href="/admin/<%= candidate._id %>" class="btn btn-success">edit</a>
+      <form
+        action="/admin/<%= candidate._id %>?_method=DELETE"
+        class="d-inline"
+        method="post"
+      >
+        <button class="btn btn-danger">delete</button>
+      </form>
+    </div>
+  </div>
+  <% } %> <% } %>
+</div>

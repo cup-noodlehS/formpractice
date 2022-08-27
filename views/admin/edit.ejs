@@ -1,0 +1,32 @@
+<% layout('layouts/adminBoilerplate') %>
+
+<div class="col-6 offset-3">
+  <h1>New Candidate</h1>
+  <form action="/admin/<%= candidate._id %>?_method=PUT" method="post">
+    <label for="name" class="form-label">Name:</label>
+    <input
+      value="<%= candidate.name %>"
+      type="text"
+      id="name"
+      name="name"
+      class="form-control mb-3"
+      required
+    />
+    <label for="image" class="form-label">Image:</label>
+    <input
+      type="text"
+      value="<%= candidate.image %> "
+      id="image"
+      name="image"
+      class="form-control mb-3"
+    />
+    <label for="position">Position:</label>
+    <select name="position" class="form-select mb-3" id="position">
+      <option value="president">President</option>
+      <option value="vice-president">Vice-President</option>
+      <option value="senator">Senator</option>
+    </select>
+    <button class="btn btn-success">Edit</button>
+    <a type="button" class="btn btn-danger" href="/admin">Cancel</a>
+  </form>
+</div>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISCP Elections</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://upload.wikimedia.org/wikipedia/en/c/c9/Seal_of_the_International_State_College_of_the_Philippines.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <%- include('./style') %>
+  </head>
+  <body>
+    <a href="#">
+      <div>
+        <img
+          src="https://lh5.googleusercontent.com/WXHR3rRPqIJwjhJ9Ot_fwsSkdxWtOxKo-qHP-B8wJGQeOJ9TgtwlrkUQ4Mf3nwoeJqAl0crvE-afddCGQEvQhw=w16383"
+          alt=""
+          class="small-logo"
+        />
+      </div>
+    </a>
+    <div class="coverpage">
+      <div class="logo">
+        <img
+          src="https://lh4.googleusercontent.com/89S0v4HsgnRqJKk5uKFvgdhXi11sUbcO6WXQmFUozSXa8c5iP-FiyP52uMf1on0CjpsNrZBGlLBcOfSEzGPx_Ns=w1280"
+          alt=""
+        />
+      </div>
+      <div class="cover-elements">
+        <h1><span class="gold">ISCP</span> Elections</h1>
+        <a href="/vote"><button>Vote now</button></a>
+        <a href="#results"><button>Election Results</button></a>
+        <a href="/admin"><button>Go Admin</button></a>
+      </div>
+    </div>
+
+    <div id="results" class="container mt-5">
+      <h1 class="gold position">President</h1>
+      <hr />
+      <div class="d-flex flex-row flex-wrap mt-3 mb-5">
+        <% for (candidate of candidates){ %> <% if (candidate.position ===
+        'president'){ %>
+        <div class="card col-md-3 p-1">
+          <img
+            src="<%= candidate.image %>"
+            class="card-img-top"
+            style="object-fit: cover; height: 300px"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><%= candidate.name %></h5>
+            <p>votes: <%= candidate.votes %></p>
+          </div>
+        </div>
+        <% } %> <% } %>
+      </div>
+
+      <h1 class="gold position">Vice-President</h1>
+      <hr />
+
+      <div class="d-flex flex-row flex-wrap mt-3 mb-5">
+        <% for (candidate of candidates){ %> <% if (candidate.position ===
+        'vice-president'){ %>
+        <div class="card col-md-3 p-1">
+          <img
+            src="<%= candidate.image %>"
+            class="card-img-top"
+            style="object-fit: cover; height: 300px"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><%= candidate.name %></h5>
+            <p>votes: <%= candidate.votes %></p>
+          </div>
+        </div>
+        <% } %> <% } %>
+      </div>
+
+      <h1 class="gold position">Senator</h1>
+      <hr />
+      <div class="d-flex flex-row flex-wrap mb-5 mt-3">
+        <% for (candidate of candidates){ %> <% if (candidate.position ===
+        'senator'){ %>
+        <div class="card col-md-3 p-1">
+          <img
+            src="<%= candidate.image %>"
+            class="card-img-top"
+            style="object-fit: cover; height: 300px"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><%= candidate.name %></h5>
+            <p>votes: <%= candidate.votes %></p>
+          </div>
+        </div>
+        <% } %> <% } %>
+      </div>
+    </div>
+
+    <footer class="footer bg-light py-3 mt-auto">
+      <div class="container">
+        <span class="text-muted">&copy; SheldonNambawan</span>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISCP Elections</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://upload.wikimedia.org/wikipedia/en/c/c9/Seal_of_the_International_State_College_of_the_Philippines.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="d-flex flex-row vh-100 mt-3" style="background-color: #001f52">
+    <div
+      class="col-md-6 offset-3 p-2"
+      style="background-color: rgba(255, 255, 255, 0.644)"
+    >
+      <div class="mt-3">
+        <center>
+          <img
+            src="https://lh5.googleusercontent.com/WXHR3rRPqIJwjhJ9Ot_fwsSkdxWtOxKo-qHP-B8wJGQeOJ9TgtwlrkUQ4Mf3nwoeJqAl0crvE-afddCGQEvQhw=w16383"
+            alt=""
+            style="width: 500px"
+          />
+        </center>
+      </div>
+      <center><hr style="color: white; width: 90%" /></center>
+      <div
+        class="alert alert-primary alert-dismissible fade show m-2"
+        role="alert"
+      >
+        Vote Wiseley!
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form action="/" method="post">
+        <div class="d-flex flex-wrap flex-row justify-content-center mt-5 mb-5">
+          <div class="col-md-3">
+            <p class="form-label">President:</p>
+            <% for (candidate of candidates){ %> <% if(candidate.position ===
+            'president'){ %>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="president"
+                id="<%= candidate._id %>"
+                value="<%= candidate._id %>"
+              />
+              <label class="form-check-label" for="<%= candidate._id %>">
+                <%= candidate.name %>
+              </label>
+            </div>
+            <% } %> <% } %>
+          </div>
+          <div class="col-md-3">
+            <p class="form-label">Vice-President:</p>
+            <% for (candidate of candidates){ %> <% if(candidate.position ===
+            'vice-president'){ %>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="vice-president"
+                id="<%= candidate._id %>"
+                value="<%= candidate._id %>"
+              />
+              <label class="form-check-label" for="<%= candidate._id %>">
+                <%= candidate.name %>
+              </label>
+            </div>
+            <% } %> <% } %>
+          </div>
+          <div class="col-md-3">
+            <p class="form-label">Senator:</p>
+            <% for (candidate of candidates){ %> <% if(candidate.position ===
+            'senator'){ %>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="senator"
+                id="<%= candidate._id %>"
+                value="<%= candidate._id %>"
+              />
+              <label class="form-check-label" for="<%= candidate._id %>">
+                <%= candidate.name %>
+              </label>
+            </div>
+            <% } %> <% } %>
+          </div>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
